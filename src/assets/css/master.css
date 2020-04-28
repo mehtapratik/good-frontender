@@ -1,0 +1,131 @@
+body {
+  position: relative;
+  padding-top: var(--space-lg);
+  padding-bottom: 10rem;
+}
+
+.site-header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 70rem) {
+  .site-header {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-text-dark);
+  }
+}
+
+.site-logo {
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 70rem) {
+  .site-logo {
+    margin-bottom: var(--space-none);
+  }
+}
+
+.site-logo__title,
+:visited.site-logo__title {
+  font: var(--type-weight-800) var(--type-size-xl) / var(--leading-none)
+    var(--typeface-heading);
+  color: var(--color-text-dark);
+  text-transform: uppercase;
+  border-bottom: 0;
+}
+
+.site-logo__subtitle {
+  font-size: var(--type-size-sm);
+  line-height: var(--leading-none);
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 70rem) {
+  .site-logo__subtitle {
+    text-align: left;
+  }
+}
+
+.site-nav {
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-nav__item {
+  flex: 1 1 33%;
+  white-space: nowrap;
+  text-align: center;
+  border-bottom: 0;
+  font-size: var(--type-size-md);
+  color: var(--color-text);
+  padding: var(--space-xs);
+  border-right: 1px solid currentColor;
+}
+
+.site-nav__item:visited {
+  color: var(--color-text);
+}
+
+.site-nav__item:last-child {
+  border-right: 0;
+}
+
+@media (min-width: 70rem) {
+  .site-nav {
+    width: auto;
+    border: 0;
+  }
+  .site-nav__item {
+    font-size: var(--type-size-md--vp-lg);
+    margin-left: var(--space-xl);
+    padding: 0;
+    border: 0;
+  }
+}
+
+.stage {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font: 300 var(--type-size-sm) / 1 var(--typeface-body);
+  padding-bottom: var(--space-xl);
+}
+
+@media (min-width: 70rem) {
+  .site-footer {
+    padding-bottom: var(--space-md);
+  }
+}
+
+.copyrights {
+  text-align: center;
+  padding-bottom: var(--space-xs);
+  margin-bottom: 0;
+}
+
+.site-footer .sm-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.sm-nav a {
+  margin-right: var(--space-md);
+}

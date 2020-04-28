@@ -1,0 +1,25 @@
+
+.post-summary {
+  margin-bottom: var(--space-xl);
+}
+
+.post-summary__title {
+  font-size: var(--type-size-xl);
+  margin-bottom: var(--space-none);
+}
+
+@media (min-width: 700px) {
+  .post-summary__title {
+    font-size: var(--type-size-xl--vp-lg)
+  }
+}
+
+.post-summary__title a {
+  border-bottom: 0;
+}
+
+.post-summary__date {
+  font-size: var(--type-size-sm);
+  color: var(--color-text-lighter);
+  margin-bottom: var(--space-xs);
+}

@@ -1,0 +1,29 @@
+{
+  "name": "good-frontender",
+  "version": "0.0.1",
+  "description": "Source code for the my frontend development blog - http://goodfrontender.com",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehtapratik/good-frontender.git"
+  },
+  "keywords": [
+    "frontend",
+    "blog",
+    "static-site-generator",
+    "11ty"
+  ],
+  "author": "Pratik Mehta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mehtapratik/good-frontender/issues"
+  },
+  "homepage": "https://github.com/mehtapratik/good-frontender#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0"
+  }
+}

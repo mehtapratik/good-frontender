@@ -1,0 +1,11 @@
+---
+tags:
+  - post
+layout: site.njk
+title: Post
+---
+
+<h1 class="post-title">{{title}}</h1>
+<div>Published: {{page.date}}</div>
+
+{{ content | safe }}

@@ -1,0 +1,16 @@
+---
+tags:
+  - notPost
+layout: site.njk
+title: Archive
+---
+
+<section class="post-listing">
+  <h1>Archive</h1>
+  {%- for post in collections.post | reverse -%}
+    <div class="post-listing__item post-summary">
+      <h2 class="post-summary__title"><a href="{{post.url}}">{{ post.data.title }}</a></h2>
+      <div class="post-summary__date">Posted on {{post.data.Published}}</div>
+    </div>
+  {%- endfor -%}
+</section>

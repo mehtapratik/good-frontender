@@ -1,0 +1,125 @@
+::selection {
+  color: var(--color-bg);
+  background: var(--color-text);
+}
+
+body {
+   font: var(--type-weight-300) var(--type-size-md) / var(--leading-md) var(--typeface-body);
+   background-color: var(--color-bg);
+   color: var(--color-text);
+}
+
+@media (min-width: 1000px) {
+   body {
+      font-size: var(--type-size-md--vp-lg);
+   }
+}
+
+strong {
+  font-weight: var(--type-weight-600);
+}
+
+a {
+   color: var(--color-link);
+   text-decoration: none;
+   padding-bottom: 1px;
+   border-bottom: 1px solid currentColor;
+}
+
+a:visited {
+   color: var(--color-link--visited);
+   border-bottom: var(--color-link--visited); 
+}
+
+a:focus {
+   outline: var(--outline-style);
+   border-bottom-color: transparent;
+   outline-offset: 1px;
+}
+
+p,
+ul,
+ol,
+blockquote,
+pre {
+  margin-bottom: var(--space-md);
+}
+
+ul,
+ol {
+  padding-left: var(--space-md);
+}
+
+li {
+  margin-bottom: var(--space-2xs);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-2xs);
+  line-height: var(--leading-sm);
+}
+
+h1 {
+  font-family: var(--typeface-heading);
+  font-size: var(--type-size-2xl);
+  font-weight: var(--type-weight-700);
+}
+
+h2 {
+  font-size: var(--type-size-xl);
+  font-weight: var(--type-weight-600);
+}
+
+h3 {
+  font-size: var(--type-size-lg);
+  font-weight: var(--type-weight-600);
+}
+
+@media (min-width: 70rem) {
+  h1 {
+    font-size: var(--type-size-2xl--vp-lg);
+  }
+
+  h2 {
+    font-size: var(--type-size-xl--vp-lg);
+  }
+
+  h3 {
+    font-size: var(--type-size-lg--vp-lg);
+  }
+}
+
+blockquote {
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-text);
+}
+
+blockquote p {
+  margin-bottom: var(--space-xs);
+}
+
+blockquote p:last-child {
+   margin-bottom: 0;
+}
+
+pre,
+code {
+  background-color: var(--color-bg-light);
+  font-family: consolas, monaco, menlo, monospace;
+  font-size: 0.9em;
+}
+
+code {
+  padding-left: var(--space-2xs);
+  padding-right: var(--space-2xs);
+  border-radius: var(--radius-xs);
+}
+
+pre {
+  padding: var(--space-xs);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}

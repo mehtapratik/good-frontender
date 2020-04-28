@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Frontend development blog by Pratik Mehta" />
+    <title>{{ title + " | Good Frontender" if title else "Good Frontender"}}</title>
+    <link rel="icon" type="image/x-icon" class="js-site-favicon" href="/assets/images/favicon.png">
+    <link href="/assets/css/fonts.css" rel="stylesheet">
+    <link href="/assets/css/reset.css" rel="stylesheet">
+     <link href="/assets/css/vars.css" rel="stylesheet">
+    <link href="/assets/css/global.css" rel="stylesheet">
+    <link href="/assets/css/foundation.css" rel="stylesheet">
+    <link href="/assets/css/helpers.css" rel="stylesheet">
+    <link href="/assets/css/master.css" rel="stylesheet">
+    <link href="/assets/css/about.css" rel="stylesheet">
+    <link href="/assets/css/post.css" rel="stylesheet">
+    <link href="/assets/css/landing-page.css" rel="stylesheet">
+    {# <link href="/assets/css/normal.css" rel="stylesheet" /> #}
+ </head>
+  <body>
+    <div class="wrapper">
+      <header class="site-header">
+        <section class="site-logo">
+          <a class="site-logo__title" href="/">Good Frontender</a>
+          <p class="site-logo__subtitle">Writings & Works of Pratik Mehta</p>
+        </section>
+        <nav class="site-nav">
+          <a class="site-nav__item" href="/about">About</a>
+          <a class="site-nav__item" href="/archive">Archive</a>
+          <a class="site-nav__item" href="/listopia">Listopia</a>
+        </nav>
+      </header>
+      <main class="stage">
+        {{ content | safe }}          
+      </main>
+      <footer class="site-footer">
+        <p class="copyrights">&copy; 2020 Pratik Mehta</p>
+        <nav class="sm-nav">
+          <a href="//github.com/mehtapratik" title="http://github.com/mehtapratik" target="_blank">GitHub</a>
+          <a href="//twitter.com/pratikgmehta" title="http://twitter.com/pratikgmehta" target="_blank">Twitter</a>
+          <a href="//www.linkedin.com/in/pratikgmehta" title="http://www.linkedin.com/in/pratikgmehta"
+            target="_blank">LinkedIn</a>
+          <a href="mailto://pratikgmehta@gmail.com" title="PratikGMehta@gmail.com">Email</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

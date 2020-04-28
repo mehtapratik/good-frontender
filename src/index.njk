@@ -1,0 +1,21 @@
+---
+tags:
+  - notPost
+layout: site.njk
+pagination:
+  data: collections.post
+  size: 3
+  alias: posts
+---
+
+<section class="recent-articles">
+  <div class="post-listing">
+    {%- for post in posts | reverse -%}
+      <div class="post-listing__item post-summary">
+        <h1 class="post-summary__title"><a href="{{post.url}}">{{ post.data.title }}</a></h1>
+        <div class="post-summary__date">Posted on {{post.data.Published}}</div>
+        <p class="post-summary__blurb">{{post.data.blurb}}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
