@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/mehtapratik/good-frontender#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0"
+    "@11ty/eleventy": "^0.10.0",
+    "acorn": "^7.1.1",
+    "minimist": ">=1.2.3"
   }
 }
