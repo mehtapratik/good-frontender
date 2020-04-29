@@ -36,6 +36,7 @@ Handy list of useful learning materials, cheatsheets and resources for all thing
 - [cssvalues.com](http://cssvalues.com): CSS Values is a simple infoapp that lets you search for almost any CSS property and get a simple list of possible values
 - [htmlhead.dev](https://htmlhead.dev): A free guide to HTML5 `head` elements
 - [Typography trivia about quotes, apostrophes, dashes and hyphens](https://www.typewolf.com/cheatsheet): A comprehensive guide to using proper typographic characters, including correct grammatical usage
+- [HTML symbol, entities and codes](https://www.toptal.com/designers/htmlarrows/symbols/): Need the copyright sign HTML code? Or the degrees Celsius HTML entity? Scroll on for dingbats, circled numbers, script letter HTML codes, the angstrom sign, biohazard sign, alef symbol, HTML checkmark entity and even a heavy black heart. 
 - [overapi.com](http://overapi.com): Cheatsheet library of various frontend technologies and programming languages
 - [CSS 3 animation library](http://justinaguilar.com/animations/index.html): CSS3 animations cheatsheet
 - [easings.net/en](https://easings.net/en): Cheatsheet of popular CSS easings functions
