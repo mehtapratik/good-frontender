@@ -16,7 +16,7 @@ body {
     flex-flow: row nowrap;
     justify-content: space-between;
     padding-bottom: var(--space-lg);
-    border-bottom: 1px solid var(--color-text-dark);
+    border-bottom: 1px solid var(--color-text);
   }
 }
 
@@ -34,7 +34,7 @@ body {
 :visited.site-logo__title {
   font: var(--type-weight-800) var(--type-size-xl) / var(--leading-none)
     var(--typeface-heading);
-  color: var(--color-text-dark);
+  color: var(--color-text);
   text-transform: uppercase;
   border-bottom: 0;
 }
