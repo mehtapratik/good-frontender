@@ -36,7 +36,7 @@ Let’s say we want to put a call-to-action button — Subscribe — in 
 
 Exemplary sites like [CSS Zen Garden](//www.csszengarden.com) reinforces this fact. It offers a possibility that you can dramatically redesign your style just by changing the CSS. However, it only works for a smaller site with handful of pages. With larger sites, however, content speicific class name keeps polluting global stylesheets. These global CSS files tends to keep growing with every new feature added to the site. Your CSS file becomes huge and convoluted over the years. No one from your team knows who wrote a specific style and where it is being used. Developers are scared to change any existing styles not knowing which page it may break. Your CSS becomes what is famously teased as [append-only CSS](//medium.com/r/?url=https%3A%2F%2Fcss-tricks.com%2Foh-no-stylesheet-grows-grows-grows-append-stylesheet-problem%2F).
 
-> One of those situations, in my limited experience, is on large teams with large codebases. The feeling is that the CSS can get far too large and team members essentially become afraid of it, and the CSS becomes jokingly-but-accurately &ldquo;append-only&rdquo;.
+> One of those situations, in my limited experience, is on large teams with large codebases. The feeling is that the CSS can get far too large and team members essentially become afraid of it, and the CSS becomes jokingly-but-accurately “append-only”.
 >
 > <cite>Chris Coyier’s comment on article about <a href="https://medium.com/r/?url=https%3A%2F%2Fcss-tricks.com%2Flets-define-exactly-atomic-css%2F">Atomic CSS</a></cite>
 
@@ -86,9 +86,9 @@ I think this approach came out of hopelessness and frustration of writing styles
 
 > Two CSS properties walk into a bar.
 >
-> &hellip;
+> …
 >
-> &hellip;
+> …
 >
 > A barstool in a completely different bar falls over.
 >
