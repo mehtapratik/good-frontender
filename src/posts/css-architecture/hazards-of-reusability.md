@@ -1,16 +1,18 @@
 ---
-layout: series.njk
-published: December 29, 2020
-lastUpdated: May 1, 2020
+layout: post.njk
+lastUpdated: 2020-05-01
 date: 2019-12-29
-series: CSS Architecture (Part 3 of 3)
+tags:
+  - post
+  - series
+series: CSS Architecture Series
 title: Hazards of Reusability
-blurb: <p>We, software engineers, love code reusability. It helps us deliver faster and cheaper while keeping the website consistent. What’s there not to love about it! However, we’re still learning how to create reusable user experience for web. There are more failed design systems than successful ones. These failures can be attributed to factors such as sponsorship, organizational priorities or technology. Today, I want to share few hazards of focusing too much on reusability based on my past experience. Some of this may lead to redundancy and eventually leading your designs system to be impractical.</p>
+blurb: We, software engineers, love code reusability. It helps us deliver faster and cheaper while keeping the website consistent. What’s there not to love about it! However, we’re still learning how to create reusable user experience for web. There are more failed design systems than successful ones. These failures can be attributed to factors such as sponsorship, organizational priorities or technology. Today, I want to share few hazards of focusing too much on reusability based on my past experience. Some of this may lead to redundancy and eventually leading your designs system to be impractical.
 ---
 
-We, software engineers, love code reusability. It helps us deliver faster and cheaper while keeping the website consistent. What’s there not to love about it!
+<p class="post__intro">We, software engineers, love code reusability. It helps us deliver faster and cheaper while keeping the website consistent. What’s there not to love about it!</p>
 
-UI reusability could be anywhere from informal and loosely defined stylesheet to more formal and version controlled design system. Back in the old days, we just used to design sites with CSS. Industry was young and sites were small. Nobody really thought about UI reusability until we started developing serious large-scale web applications. Internal desktop application, too, were replaced by intranet websites. User experience design industry evolved and with that the need for consistent design and centralized design rollouts.
+<p class="post__intro">UI reusability could be anywhere from informal and loosely defined stylesheet to more formal and version controlled design system. Back in the old days, we just used to design sites with CSS. Industry was young and sites were small. Nobody really thought about UI reusability until we started developing serious large-scale web applications. Internal desktop application, too, were replaced by intranet websites. User experience design industry evolved and with that the need for consistent design and centralized design rollouts.</p>
 
 Today, every aspect of web is heavily focused on reusability. UX design tools such as Figma, Sketch and InVision promote their products based on how well they let designers to reuse their design and how well they can create design systems. On the other hand, focus of frontend developers is shifted from web page to web component. Libraries such as React and Vue are written with this goal in mind.
 

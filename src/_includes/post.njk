@@ -1,11 +1,20 @@
 ---
-tags:
-  - post
 layout: site.njk
 title: Post
 ---
 
-<h1 class="post-title">{{title}}</h1>
-<div>Published: {{page.date}}</div>
-
-{{ content | safe }}
+<article class="post">
+  <header class="post__header">
+    <div class="post__series-name">{{series}}</div>
+    <h1 class="post__title">{{title}}</h1>
+    <div class="post__meta-data">
+      <ul> 
+        <li>Published: <time class="post__timestamp" pubdate datetime="{{page.date}}">{{page.date | formatUTCDate }}</time></li>
+        <li>Updated: <time class="post__timestamp" datetime="{{lastUpdated}}">{{lastUpdated | formatUTCDate }}</time></li>
+      </ul>
+    </div>
+  </header>
+  <div class="post__content">
+    {{ content | safe }}
+  </div>
+</div>

@@ -1,4 +1,3 @@
-
 .post-summary {
   margin-bottom: var(--space-xl);
 }
@@ -14,12 +13,134 @@
   }
 }
 
-.post-summary__title a {
-  border-bottom: 0;
-}
-
 .post-summary__date {
   font-size: var(--type-size-sm);
   color: var(--color-text-lighter);
   margin-bottom: var(--space-xs);
+}
+
+.post__header {
+  margin-bottom: var(--space-lg);
+}
+
+.post__series-name {
+  text-transform: uppercase;
+  color: var(--color-text-lighter);
+}
+
+.post__title {
+  margin-top: var(--space-none);
+  margin-bottom: var(--space-3xs);
+}
+
+.post__intro {
+  font-size: var(--type-size-md);
+}
+
+@media (min-width: 70rem) {
+  .post__intro {
+    font-size: var(--type-size-lg--vp-lg);
+  }
+}
+
+.post__content > *:not(.post__intro) {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post__content iframe {
+  display: block;
+}
+
+.by-the-way {
+  background: var(--color-bg-light);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.by-the-way > *:last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  background: var(--color-bg-light);
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-xs);
+}
+
+.blockquote > *:last-child {
+  margin-bottom:0;
+}
+
+cite:before {
+  content: '―';
+  padding-right: var(--space-xs);
+}
+
+cite {
+  font-style: normal;
+  font-weight: 700;
+}
+
+
+.post__content figure:not(.embeded-video),
+.post__content img {
+  max-width: 100%;
+}
+
+.post__content img {
+  display: block;
+}
+
+.post__content figure figcaption 
+{
+  margin-top: var(--space-xs);
+}
+
+.post__content figcaption {
+  color: var(--color-text-lighter);
+  text-align: center;
+  font-size: var(--type-size-sm);
+}
+
+
+.post__meta-data {
+  font-size: var(--type-size-sm);
+  line-height: var(--leading-none);
+}
+
+.post__meta-data ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 70rem) {
+  .post__meta-data li {
+    padding-left: var(--space-xs);
+  }
+
+  .post__meta-data li:first-child {
+    padding-left: 0;
+  }
+
+  .post__meta-data li {
+      display: inline-block;
+  }
+
+  .post__meta-data li:before {
+    content: ' / ';
+    padding-right: var(--space-xs);
+  }
+}
+
+
+.post__meta-data li:first-child:before {
+  content: '';
+  padding-right: 0;
+}
+
+.post__meta-data time {
+  color: var(--color-text-lighter);
 }

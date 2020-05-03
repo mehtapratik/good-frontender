@@ -1,12 +1,18 @@
 ---
-layout: series.njk
-published: December 22, 2019
-lastUpdated: May 1, 2020
+layout: post.njk
+lastUpdated: 2020-05-01
 date: 2019-12-22
-series: CSS Architecture (Part 2 of 3)
+tags:
+  - post
+  - series
+series: CSS Architecture Series
 title: Choosing the Right CSS Strategy for Your Website
-blurb: <p><a href="/posts/css-architecture/methods-of-writing-styles">First part of the CSS Architecture Series</a> set the stage for challenges with CSS and covered different methods of writing styles for web. Traditional approach is to write styles that describes the content it is hosting. Semantic approach is to express the styles in terms of design. And atomic approach is to abstract the design in HTML instead of CSS.</p> <p>The second article of this series builds from its first part. It goes on to discuss the CSS strategies that would work in favor of you and your application. How to write reusable, scalable and predictable styles while keeping the file size small? Our of three methods of writing styles, which methods to choose for for your application? This article will answer such questions.</p>
+blurb: First part of the CSS Architecture Series set the stage for challenges with CSS and covered different methods of writing styles for web. The second article of this series builds from its first part. It goes on to discuss the CSS strategies that would work in favor of you and your application. How to write reusable, scalable and predictable styles while keeping the file size small? Our of three methods of writing styles, which methods to choose for for your application? This article will answer such questions.
 ---
+
+
+<p class="post__intro"><a href="/posts/css-architecture/methods-of-writing-styles">First part of the CSS Architecture Series</a> set the stage for challenges with CSS and covered different methods of writing styles for web. Traditional approach is to write styles that describes the content it is hosting. Semantic approach is to express the styles in terms of design. And atomic approach is to abstract the design in HTML instead of CSS.</p> 
+<p class="post__intro">The second article of this series builds from its first part. It goes on to discuss the CSS strategies that would work in favor of you and your application. How to write reusable, scalable and predictable styles while keeping the file size small? Our of three methods of writing styles, which methods to choose for for your application? This article will answer such questions.</p>
 
 ## Organizing CSS between global and local scope
 The power of CSS comes from its ability to do site-wide changes using global stylesheets. This is a blessing at the time of site level redesign. And it feels like a curse when you end up breaking few pages by changing a selector that you thought only you were using. So how do we retain our ability to do intentional design changes? And how do we avoid unintentional mishaps?

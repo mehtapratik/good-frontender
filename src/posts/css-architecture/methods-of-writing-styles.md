@@ -1,14 +1,19 @@
 ---
-layout: series.njk
-published: December 17, 2019
-lastUpdated: April, 30, 2020
+layout: post.njk
+lastUpdated: 2020-04-30
 date: 2019-12-17
-series: CSS Architecture Series (Part 1 of 3)
+tags: 
+   - post
+   - series
+series: CSS Architecture Series
 title: Methods of Writing Styles for Web
-blurb: CSS is caught into a lot of controversies nowadays — mainly around <a href="//moox.io/blog/farewell-css/">global selectors</a> and <a href="//medium.com/r/?url=https%3A%2F%2Fwww.simontaggart.com%2F2019-01-11-im-super-good-at-css-and-i-dont-recommend-the-cascade-dont-%40-me%2F">their capability to make site-wide changes</a> — intended or otherwise. This is because CSS was originally meant for documents and not for large scale web applications. We tried to scale CSS to fit into large applications but ended up with bulky CSS file with thousands of lines of code. To overcome these challenges, we looked for a solution outside of CSS. The approaches such as <a href="https://css-tricks.com/lets-define-exactly-atomic-css/">Atomic CSS</a> and <a href="https://medium.com/dailyjs/what-is-actually-css-in-js-f2f529a2757">CSS-in-JS</a> became popular. To understand how we used to write CSS and where we’re headed, we need to first talk about all of the possible ways to write styles for web.
+blurb: CSS is caught into a lot of controversies nowadays — mainly around global selectors and their capability to make site-wide changes — intended or otherwise. This is because CSS was originally meant for documents and not for large scale web applications. We tried to scale CSS to fit into large applications but ended up with bulky CSS file with thousands of lines of code. To overcome these challenges, we looked for a solution outside of CSS. The approaches such as Atomic CSS and CSS-in-JS became popular. To understand how we used to write CSS and where we’re headed, we need to first talk about all of the possible ways to write styles for web.
 ---
+<p class="post__intro">
+CSS is caught into a lot of controversies nowadays — mainly around <a href="//moox.io/blog/farewell-css">global selectors</a> and <a href="//www.simontaggart.com/2019-01-11-im-super-good-at-css-and-i-dont-recommend-the-cascade-dont-@-me">their capability to make site-wide changes</a> — intended or otherwise. This is because CSS was originally meant for documents and not for large scale web applications. We tried to scale CSS to fit into large applications but ended up with bulky CSS file with thousands of lines of code. To overcome these challenges, we looked for a solution outside of CSS. The approaches such as <a href="//css-tricks.com/lets-define-exactly-atomic-css/">Atomic CSS</a> and <a href="//medium.com/dailyjs/what-is-actually-css-in-js-f2f529a2757">CSS-in-JS</a> became popular. To understand how we used to write CSS and where we’re headed, we need to first talk about all of the possible ways to write styles for web.
+</p>
 
-<section class="by-the-way">
+<section class="post__intro by-the-way">
 
    This article is a part one of three in CSS Architecture Series. It reflects totality of my understanding and strategies toward CSS. Through these writings, I will try to answer questions such as…
 
