@@ -1,7 +1,7 @@
 ---
 layout: series.njk
 published: December 17, 2019
-updated: April, 30, 2020
+lastUpdated: April, 30, 2020
 date: 2019-12-17
 series: CSS Architecture Series (Part 1 of 3)
 title: Methods of Writing Styles for Web
