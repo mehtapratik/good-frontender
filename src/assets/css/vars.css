@@ -56,15 +56,15 @@
 
   --outline-style: 1px dotted currentColor;
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #000;
+    --color-bg: #18171C;
     --color-text: #fff;
     --color-text-light: #777;
     --color-text-lighter: #aaa;
-    --color-link: #fff;
-    --color-link--visited: #fff;
+    --color-link: #F1CB73;
+    --color-link--visited: #F1CB73;
     --color-bg-light: #2a2a2a;
   }
-} 
+}  */

@@ -41,7 +41,8 @@ p,
 ul,
 ol,
 blockquote,
-pre {
+pre,
+figure {
   margin-bottom: var(--space-md);
 }
 

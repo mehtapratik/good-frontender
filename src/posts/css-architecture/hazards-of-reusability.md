@@ -1,134 +1,68 @@
 ---
-layout: series.njk
-Published: December 29, 2020
+layout: post.njk
+lastUpdated: 2020-05-01
 date: 2019-12-29
-series: CSS Architecture (Part 3 of 3)
+tags:
+  - post
+  - series
+series: CSS Architecture Series
 title: Hazards of Reusability
-blurb: We're still learning how to create reusable user experience for web. There are more failed design systems than successful ones. Today, I want to share few hazards of focusing too much on reusability based on my past experience.
+blurb: We, software engineers, love code reusability. It helps us deliver faster and cheaper while keeping the website consistent. What’s there not to love about it! However, we’re still learning how to create reusable user experience for web. There are more failed design systems than successful ones. These failures can be attributed to factors such as sponsorship, organizational priorities or technology. Today, I want to share few hazards of focusing too much on reusability based on my past experience. Some of this may lead to redundancy and eventually leading your designs system to be impractical.
 ---
 
-## Preface
+<p class="post__intro">We, software engineers, love code reusability. It helps us deliver faster and cheaper while keeping the website consistent. What’s there not to love about it!</p>
 
-This is a part one of three in CSS Architecture series. This series reflects totallity of my understanding and strategies toward CSS. Through these writings, I will try to answer questions such as…
+<p class="post__intro">UI reusability could be anywhere from informal and loosely defined stylesheet to more formal and version controlled design system. Back in the old days, we just used to design sites with CSS. Industry was young and sites were small. Nobody really thought about UI reusability until we started developing serious large-scale web applications. Internal desktop application, too, were replaced by intranet websites. User experience design industry evolved and with that the need for consistent design and centralized design rollouts.</p>
 
-- How many different ways we can write CSS? And which approach to pick for a specific type of web application?
-- How do we tame CSS file size while avoiding common pitfalls of CSS?
-- How do we keep our website consistent and reuse the design patterns where we can?
-- How do we easily refresh the design without having to touch every page in the site?
+Today, every aspect of web is heavily focused on reusability. UX design tools such as Figma, Sketch and InVision promote their products based on how well they let designers to reuse their design and how well they can create design systems. On the other hand, focus of frontend developers is shifted from web page to web component. Libraries such as React and Vue are written with this goal in mind.
 
-In general, this writings are my opinions about best practices and right way of writing CSS.
+This shift in trend was much needed for web to evolve. Any serious web site with more than a handful of pages needs to think about UI reusability seriously. However, we’re still learning how to create reusable user experience for web. There are more failed design systems than successful ones. These failures can be attributed to factors such as sponsorship, organizational priorities or technology. Today, I want to share few hazards of focusing too much on reusability based on my past experience. Some of this may lead to redundancy and eventually lead your designs system to be impractical.
 
-## Introduction
+## Hazard # 1: Designing in Isolation
 
-CSS is caught into a lot of controversies nowadays - mainly around global selectors and their capability to make site-wide changes - intended or otherwise. This is because CSS was originally meant for documents and not for large scale web applications. We tried to scale CSS to fit into large applications but ended up with bulky CSS file with thousands of lines of code. To overcome these challenges, we looked for a solution outside of CSS. The approaches such as Atomic CSS and CSS-in-JS became popular.
+If you want your design to be reusable, you have to do so while you’re designing your pages. For each page, designers and developers should determine what’s really reusable. Identify broad set of reusable pattern that aren’t too specific to a use-case or not too general to remain impractical.
 
-To understand how we used to write CSS and where we're headed, let's first talk about all possible ways we can write styles.
+You can’t do so in isolation; that is an independent team or a person with reserved capacity creating reusable designs for other people to use. In most probable case, you might end up with a situation where patterns that developers need aren’t there and patterns that exists in your design systems are left unused as they don’t meet practical use-cases.
 
-### Traditional approach
+In other words, design system are fed by efforts of individual page developers and designers. Designs systems that expect to achieve the other way fails.
 
-**_Using CSS as a content construct_**
+## Hazard # 2: Overthinking and overdoing reusability
+Don’t design something that you don’t need today. It’s quite natural to think of reusability while coding. But resist the temptation to make anything reusable that can’t be applied in immediate future.
 
-This approach is probably as old as web. With this approach, we describe our class names based on the content we're styling. It seems totally against principle of Separation of Concerns but it is baked right into our HTML specification:
+Reusable designs need fore-thinking and additional effort to make it generic enough to accommodate other pages. You shouldn’t take that extra strain unless you’re sure of your its reuse. Let’s say you designed a widget for a page. Few months later, you notice that same widget is needed in other pages with little or no variations. That would be the right time to refactor your widget, making it reusable and adding it to the design system. This way only truly reusable design gets coded for reusability.
 
-> <strong>From HTML - Living Standard</strong>
->
-> …authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content.
+When it comes to design systems, less is more. The more you’ve in design system, more you will have to version, document and manage. That’s why be very selective about what gets added in your design system. I think it’s far better to have a design systems with handful of all-rounded, well-designed and well-documented patterns compared to a design system with hundreds of patterns with little or no documentation.
 
-Let's say we want to put a call-to-action button - Subscribe - in our blog. Intuitively it makes sense to describe the class name as btn or variations of it. However, the class name btn is a design construct. It doesn't describe the nature of the content. To adhere to traditional approach, we have to change class name to something like `subscribe-link`.
+## Hazard # 3: Too specific or too general patterns
 
-```
-<a href="/subscribe.html" class="subscribe-link">Subscribe</a>
-```
+Truly reusable patterns aren’t neither too specific nor too general. Developers should practice to strike an ideal balance between both. Patterns that are too specific are left unused as it fits only a specific use case  — probably the page it was originally coded for. Too generic patterns, on the other hand, seems to appeal to everything. It kills designer creativity by forcing them to use that pattern for all of their designs. One example of such highly generic pattern is _cards_ or _tiles_.
 
-Exemplary sites like CSS Zen Garden reinforces this fact. It offers a possibility that you can dramatically redesign your style just by changing the CSS. However, it can only work for a smaller site with handful of pages. With larger sites, however, content speicific class name keeps polluting global stylesheets. These global CSS files tends to keep growing with every new feature added to the site. Your CSS file becomes huge and convoluted over the years. No one from your team knows who wrote a specific style and where it is being used. Developers are now afraid of changing any existing styles not knowing which page it may break. Your CSS becomes what is famously teased as append-only CSS.
+## Hazard # 4: Design may become _boring_
 
-> One of those situations, in my limited experience, is on large teams with large codebases. The feeling is that the CSS can get far too large and team members essentially become afraid of it, and the CSS becomes jokingly-but-accurately "append-only".
->
-> Chris Coyier's comment on article about Atomic CSS
+I am not a fulltime designer, and I could be wrong here, but I have started to believe that we drove the idea of design consistency and reusability too far. Design systems should only establish broad strokes of design and let individual page designers define the fine details. This kind of constrained creativity lets designer still be creative within broad boundaries of your design system. 
 
-This is where controversies begun. People started questioning if CSS is suitable, at all, for large scale web application. Putting the controversies aside, traditional approach give you restylable HTML but not reusable CSS.
+When it comes to web, we design around the content. Our goal is to deliver content to the user more effectively. We think about the message and then we identify the user interface elements that can help us deliver that message. Once we establish that, we look for the patterns to reuse from design system. If we dive straight into design system and assemble page using the patterns from design system, we’re eseentially into _manufacturing business_ not _design business_. This makes design predictable and boring. Your design loses the element of surprise which, I think, _in some cases_, is very much needed for a positive impact on user experience.
 
-### Semantic approach
+> Conforming and efficiency has a price. And that price is design.
+> 
+> <cite>Mark Boulton</cite>
 
-**_Using CSS as a design construct_**
+I will leave you with this fine talk by [Espen Brunborg](//espen.design). He is far better than me at explaining how web has evolved to kill the creativity.
 
-Semantic styles are described in terms of the design constructs such as buttons, tabs and modals. Probably, you're thinking isn't semantic coding concerned with content? In that sense, traditional approach would qualify as semantic approach.
+<figure>
+<div style="padding:56.25% 0 0 0;position:relative;">
+   <iframe src="https://player.vimeo.com/video/173326452?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<figcaption>
+   Espen Brunborg: The Secret Life Of Comedy  (SmashingConf NYC &rsquo;16)
+</figcaption>
+</figure>
 
-Let's pause here for a minute and think about the term semantic code. Our common understanding is that semantic code describes the content. It aids programs like search engines and screen readers to crawl your content and make sense of it. As an added bonus, developers could enjoy enhanced readability since the markup describes itself.
+## Take away points
 
-Isn't then the semantic coding just about HTML since it is designed to structure and describe our content? Why should we pass that burden to CSS? We're not going to help content crawlers if we describe the content with CSS. CSS class names are meaningless to them. Same could be said for code readability - using class name to describe your code is a terrible idea. CSS is reserved for design and leave it just for that.
-
-Originally, the word semantic came from linguistics. Semantics deals with study of meanings. It assigns meaning to different signs and symbols. If we go by linguistics definition, what's semantic varies by our intent (meaning). And principle of Separation of Concerns (SoC) clearly isolates our intents:
-
-- HTML should describe the content
-- CSS should describe the presentation
-- JavaScript should describe the behaviors
-
-In that case, we can't use content's intent in CSS and pretend that our CSS is semantic. With this rationale in mind…
-
-Semantic HTML describes the content
-Semantic CSS describes the design
-Semantic JavaScript describes the behaviors
-
-This might be against HTML specification and what's traditionally believed as a best practice. However, I've started to believe that semantically correct code uses the right tool for right purpose to makes our code more meaningful.
-
-With new definition of semantic code, let's rewrite our example:
-
-```
-<a id="subscribeLink" href="/subscribe.html" class="btn btn--primary" data-modal>Subscribe</a>
-```
-
-First obvious change here is the class names. However, we've made other subtle changes to be truly semantic. ID attribute now describes the content of the element. It can also be used to bind event handlers just to that one element. If you want to target more than one element, use data attributes (`data-modal`) instead of CSS hooks (`class="js-modal"`). Since CSS is a design construct, semantic code would avoid using class name to attach behaviors.
-
-Here, our CSS is reusable but our HTML is not quite restylable. For example, we can not restyle subscribe link with just the CSS without propagating this change across the site. We will have to change the markup. However, that's an acceptable limitation in my opinion if you've a larger codebase. Now, lets say we want to change the color of buttons to meet the ADA contrast requirement. This change would be done in button pattern and all the pages using this pattern will be updated. After all, isn't this what we would want in corporate applications controlled by strict branding guidelines?
-
-This is why Semantic CSS is favored by designers and styleguide developers. It allows you to define global patterns to reused across the site.
-
-### Atomic approach
-
-**_CSS as a LEGO construct_**
-
-I think approach came out of hopelessness and frustration of writing styles for any serious web application with more than few pages. This happened mainly due to the behaviors of global selector and its unintended effects on different pages. Additionally, if you're not careful enough, your CSS file size can grow out of control no matter which approach you follow -  semantic or traditional.
-
-> Tweet by @thomasfuchs
->
-> Two CSS properties walk into a bar.
->
-> &hellip;
->
-> &hellip;
->
-> A barstool in a completely different bar falls over.
-
-Some of us (myself included) divorced ourselves from the concept of design abstraction in CSS, and looked for an answer outside of CSS. Two approaches became popular: atomic styles and CSS-in-JS.
-
-> _This series excludes CSS-in-JS from its scope. This is because I haven't practiced this approach and I don't want to write opinions without having first-hand experience. The idea of component level abstraction is definitely appealing to me. However, the danger here could come from focusing all the time at component level granularity and losing your focus from site level factors such rebranding and redesign._
-
-Atomic CSS offers preset variations of design as one CSS property per class. You will no longer write CSS while developing your page. Instead, you will choose from preset collection of atomic classes. Your design specs call for 18 pixel font size and Roboto font? CSS classes fs-18 and type-roboto are there for you to build your page like a LEGO modal. Sure enough, this stopped CSS from growing. Designing pages, with one LEGO brick at a time, couldn't be more easier.
-
-This approach offered few benefits:
-
-- Atomic CSS exposes only limited set of classes allowed per design and brand standards. This helped designers to enforce their specifications. Less developers will go rogue and stay within the boundaries defined by designers.
-- CSS file size will stop growing because there will be less designing and more composing. Instead of writing styles (designing), you will build your page by putting together handful of atomic classes (composing).
-
-This is how our previous examples will look with atomic styles:
-
-```
-<a href="/subscribe.html" class="px-20 py-5 font-roboto font-16 font-white bg-primary">Subscribe</a>
-```
-
-Personally, I found that building pages with atomic styles is surprisingly easier. After using atomic styles for couple of years, however, I realized that maintaining pages and making design changes is where this approach failed me. Many design changes required changing class names in multiple instances. Finding and changing these instances without breaking anything else is stressfull and error-prone.
-
-With traditional and semantic approach CSS became append-only and developers were afraid of changing CSS. Now, with this approach developers are stressed about changing class names in their markup.
-
-**_Seems like all we did is to shift developers fears from changing styles to changing markup._**
-
-In the end, stakeholders questioned if there was an easy way to refresh the design without having to touch each and every page in the site. Are they asking me to go back and abstract the design in CSS? Is there a way in-between? Can we write scalable, reusable and small stylesheets while avoiding common mistakes?
-
-That's the subject of next writing this series.
-
-## Parting thoughts
-
-Broadly speaking, one approach won't work in all instances. If we truly want to create truly scalable, reusable and consistent web experience and keep the file size in check, we have to learn to mix different approaches based on the repetition patterns, nature of the application and organizational structure.
-
-In the second writing of this series, we will talk about framework and set of rules that will help us pick right approach for right application. We will weigh pros-n-cons of each approach and try to strike right balance to write good code for web without going mad.
+- Don’t design in silo and dictate the design. Instead, collaborate with individual page designers to come-up with truly meaningful and reusable design patterns.
+- Do design diet and keep your library lean.
+- Code for today.
+- Start with specifics and make designs generic as needed. Make sure you strike the ideal balance between too specific and too generic.
+- Patterns in your design systems are reference for reusability. It should not force designers into compliance and kill creativity.
