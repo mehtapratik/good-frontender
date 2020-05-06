@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Source code for the my frontend development blog - http://goodfrontender.com",
   "scripts": {
-    "sass": "sass ./src/assets/css/site.scss:./dist/assets/css/site.css --style=compressed",
+    "sass": "sass ./src/assets/css/site.scss:./src/assets/css/site.css --style=compressed",
     "watch": "npm run sass -- --watch",
     "prestart": "npm run sass",
     "start": "eleventy --serve",

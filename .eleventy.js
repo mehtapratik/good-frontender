@@ -7,6 +7,9 @@ module.exports = function (config) {
   });
   config.addPassthroughCopy("src/assets/fonts");
   config.addPassthroughCopy("src/assets/images");
+  config.addPassthroughCopy("src/assets/css/*.css");
+  config.addPassthroughCopy("src/assets/css/*.map");
+
   return {
     dir: {
       input: "src",
