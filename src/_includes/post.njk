@@ -9,7 +9,7 @@ title: Post
     <h1 class="post__title">{{title}}</h1>
     <div class="post__meta-data">
       <ul> 
-        <li>Published: <time class="post__timestamp" pubdate datetime="{{page.date}}">{{page.date | formatUTCDate }}</time></li>
+        <li>Posted: <time class="post__timestamp" pubdate datetime="{{page.date}}">{{page.date | formatUTCDate }}</time></li>
         <li>Updated: <time class="post__timestamp" datetime="{{lastUpdated}}">{{lastUpdated | formatUTCDate }}</time></li>
       </ul>
     </div>

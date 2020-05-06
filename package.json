@@ -3,8 +3,11 @@
   "version": "0.0.1",
   "description": "Source code for the my frontend development blog - http://goodfrontender.com",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "eleventy --serve",
+    "sass": "sass ./src/assets/css/site.scss:./dist/assets/css/site.css --style=compressed",
+    "watch": "npm run sass -- --watch",
+    "prestart": "npm run sass",
+    "start": "eleventy --serve",
+    "prebuild": "npm run sass",
     "build": "eleventy"
   },
   "repository": {
@@ -26,6 +29,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "acorn": "^7.1.1",
-    "minimist": ">=1.2.3"
+    "minimist": ">=1.2.3",
+    "sass": "^1.26.5"
   }
 }

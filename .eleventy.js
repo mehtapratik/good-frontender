@@ -5,7 +5,8 @@ module.exports = function (config) {
     var days = ['Sunday', 'Monday', 'Tuesday', 'Thursday', 'Friday', 'Saturday'];
     return `${days[value.getUTCDay()]}, ${months[value.getUTCMonth()]} ${value.getUTCDate()}, ${value.getUTCFullYear()}`;
   });
-  config.addPassthroughCopy("src/assets");
+  config.addPassthroughCopy("src/assets/fonts");
+  config.addPassthroughCopy("src/assets/images");
   return {
     dir: {
       input: "src",

@@ -24,7 +24,6 @@ table {
 
 :root {
    box-sizing: border-box;
-   font-size: 10px;
 }
 
 *,
@@ -34,7 +33,7 @@ table {
 }
 
 html, body {
-   min-height: 100vh;
+   min-height: 100%;
 }
 
 ul, ol {
@@ -42,7 +41,7 @@ ul, ol {
    padding-left: 1rem;
 }
 
-/* To remove innershadow from input elements in safari */
+// To remove innershadow from input elements in safari
 input {
     -webkit-appearance: none;
     -moz-appearance: none;

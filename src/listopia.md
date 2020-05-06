@@ -1,4 +1,5 @@
 ---
+blurb: Handy list of useful learning materials, cheatsheets and resources for all things frontend.
 tags:
   - notPost
   - navItem
@@ -64,7 +65,7 @@ Handy list of useful learning materials, cheatsheets and resources for all thing
 
 - [squoosh.app](//squoosh.app): Compress and compare images with different codecs, right in your browser
 - [svgomg.firebaseapp.com](//svgomg.firebaseapp.com): An SVG optimizer based on [SVGO](https://github.com/svg/svgo)
-
+- [google-webfonts-helper](//google-webfonts-helper.herokuapp.com/fonts): Get eot, ttf, svg, woff and woff2 files + CSS snippets
 ## Learning resources
 
 ### Free

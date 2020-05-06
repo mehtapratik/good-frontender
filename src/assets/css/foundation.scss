@@ -1,0 +1,9 @@
+.wrapper {
+  margin-left: $space-sm;
+  margin-right: $space-sm;
+
+  @media (min-width: $viewport-md-min) {
+    margin-left: $space-lg;
+    margin-right: $space-lg;
+  }
+}

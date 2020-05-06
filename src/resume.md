@@ -1,4 +1,5 @@
 ---
+blurb: Resume of Pratik Mehta
 tags:
   - notPost
 layout: site.njk
