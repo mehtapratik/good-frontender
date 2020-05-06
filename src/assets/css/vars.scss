@@ -1,0 +1,63 @@
+/* Colors */
+$color-bg: #fff;
+$color-text: #000;
+$color-text-light: #555;
+$color-text-lighter: #767676;
+$color-link: #1644CD;
+$color-link--visited: #1644CD;
+$color-bg-light: #efefef;
+
+// Tyopeface
+$typeface-body: Helvetica, Arial, sans-serif;
+$typeface-heading: Montserrat, Futura, Helvetica, Arial, sans-serif;
+
+// Leading
+$leading-none: 1;
+$leading-xs: 1.2;
+$leading-sm: 1.35;
+$leading-md: 1.5;
+$leading-lg: 2;
+
+// Type weights
+$type-weight-300: 300; // body font 
+$type-weight-600: 600; // body font 
+$type-weight-700: 700; // montserrat
+$type-weight-800: 800; // montserrat
+
+// Type sizes
+$type-size-root: 18px;
+$type-size-root--vp-lg: 16px;
+$type-size-2xl: 1.67rem;
+$type-size-2xl--vp-lg: 2.25rem;
+$type-size-xl: 1.45rem;
+$type-size-xl--vp-lg: 1.5rem;
+$type-size-lg: 1.15rem;
+$type-size-lg--vp-lg: 1.3125rem;
+$type-size-md: 1rem;
+$type-size-md--vp-lg: 1rem;
+$type-size-sm: .89rem;
+$type-size-sm--vp-lg: .875rem;
+$type-size-names: sm, md, lg, xl, xxl;
+$type-sizes: .89rem, 1rem, 1.15rem, 1.45rem, 1.67rem;
+$type-sizes--vp-lg: .875rem, 1rem, 1.3125rem, 1.5rem, 2.25rem;
+
+// Spacing
+$space-none: 0;
+$space-3xs: 0.1em;
+$space-2xs: 0.25em;
+$space-xs: 0.5em;
+$space-sm: 0.75em;
+$space-md: 1em;
+$space-lg: 1.5em;
+$space-xl: 2em;
+
+// Border radius
+$radius-xs: .15rem;
+$radius-sm: .25rem;
+
+// Consistent outline styles for focus-ring 
+$outline-style: 2px dotted currentColor;
+
+// Viewports - for media queries 
+$viewport-md-min: 700px;
+$viewport-lg-min: 1000px;

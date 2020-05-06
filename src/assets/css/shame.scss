@@ -1,0 +1,10 @@
+// Hacks I had to add to support certain browsers
+
+
+// IE10+ specific styles
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {  
+   .stage,
+   .site-nav {
+      display: block;
+   }
+}

@@ -1,0 +1,27 @@
+.salutation {
+  font-family: $typeface-heading;
+  font-weight: $type-weight-800;
+  line-height: 1;
+  margin-top: $space-lg;
+  @include font-size(xxl);
+}
+
+.intro {
+  font-family: $typeface-body;
+  line-height: $leading-sm;
+  margin-bottom: $space-md;
+}
+
+.who-am-i {
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+  @include font-size(xxl);
+}
+
+.who-am-i-ext {
+  display: block;
+  font-weight: $type-weight-300;
+  color: $color-text-lighter;
+  @include font-size(lg);
+}

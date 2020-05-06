@@ -1,0 +1,130 @@
+::selection {
+  color: $color-bg;
+  background: $color-text;
+}
+
+:root {
+  font-size: $type-size-root;
+
+  @media (min-width: $viewport-md-min) {
+    font-size: $type-size-root--vp-lg;
+  }
+}
+
+body {
+  font-weight: $type-weight-300;
+  line-height: $leading-md;
+  font-family: $typeface-body;
+  background-color: $color-bg;
+  color: $color-text;
+  font-size: 1rem;
+}
+
+strong {
+  font-weight: $type-weight-600;
+}
+
+a {
+   color: $color-link;
+   text-decoration: none;
+   padding-bottom: 1px;
+   border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  border-bottom-color: currentColor;
+}
+
+a:visited {
+   color: $color-link--visited;
+}
+
+
+// To make focus ring treatment consistent across all element
+// UNLESS certain element needs special styline to stand out 
+:focus {
+   outline: $outline-style;
+}
+
+p,
+ul,
+ol,
+blockquote,
+pre,
+figure {
+  margin-bottom: $space-sm;
+}
+
+ul,
+ol {
+  padding-left: $space-md;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: $space-md;
+  margin-bottom: $space-2xs;
+  line-height: $leading-sm;
+}
+
+h1 {
+  font-family: $typeface-heading;
+  font-weight: $type-weight-700;
+  @include font-size(xxl);
+}
+
+h2 {
+  font-weight: $type-weight-600;
+  @include font-size(xl);
+}
+
+h3 {
+  font-weight: $type-weight-600;
+  @include font-size(lg);
+}
+
+blockquote {
+  border-radius: $radius-sm;
+  background: $color-bg-light;
+  padding: $space-xs $space-md;
+  border-left: 3px solid $color-text;
+  @include font-size(sm);
+}
+
+blockquote p {
+  margin-bottom: $space-xs;
+}
+
+blockquote > *:last-child {
+   margin-bottom: 0;
+}
+
+cite:before {
+  content: '―';
+  padding-right: $space-xs;
+}
+
+cite {
+  font-style: normal;
+  font-weight: $type-weight-600;
+}
+
+pre,
+code {
+  background-color: $color-bg-light;
+  font-family: consolas, monaco, menlo, monospace;
+  @include font-size(sm);
+}
+
+code {
+  padding-left: $space-2xs;
+  padding-right: $space-2xs;
+  border-radius: $radius-xs;
+}
+
+pre {
+  padding: $space-xs;
+  border-radius: $radius-sm;
+  overflow-x: auto;
+}

@@ -1,22 +1,42 @@
 <!doctype html>
 <html lang="en">
   <head>
+
+    <!-- essentials -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="Frontend development blog by Pratik Mehta" />
-    <title>{{ title + " | Good Frontender" if title else "Good Frontender"}}</title>
-    <link rel="icon" type="image/x-icon" class="js-site-favicon" href="/assets/images/favicon.png?6">
-    <link href="/assets/css/fonts.css" rel="stylesheet">
-    <link href="/assets/css/reset.css" rel="stylesheet">
-     <link href="/assets/css/vars.css" rel="stylesheet">
-    <link href="/assets/css/global.css" rel="stylesheet">
-    <link href="/assets/css/foundation.css" rel="stylesheet">
-    <link href="/assets/css/helpers.css" rel="stylesheet">
-    <link href="/assets/css/master.css" rel="stylesheet">
-    <link href="/assets/css/about.css" rel="stylesheet">
-    <link href="/assets/css/post.css" rel="stylesheet">
-    <link href="/assets/css/landing-page.css" rel="stylesheet">
-    {# <link href="/assets/css/normal.css" rel="stylesheet" /> #}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>{{ title + " | Good Frontender by Pratik Mehta" if title else "Good Frontender by Pratik Mehta"}}</title>
+    <meta name="description" content="{{blurb}}" />
+
+    <!-- icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon-iphone-60x60.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-touch-icon-ipad-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-touch-icon-iphone-retina-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-touch-icon-ipad-retina-152x152.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="assets/images/favicon/app-icon-256x256.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="assets/images/favicon/app-icon-512x512.png">
+
+    <!-- facebook -->
+    <meta property="og:url" content="https://goodfrontender.com{{page.url}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{blurb}}">
+    <meta property="og:site_name" content="Good Frontender">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="Pratik Mehta">
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@pratikgmehta">
+    <meta name="twitter:creator" content="@pratikgmehta">
+    <meta name="twitter:url" content="https://goodfrontender.com{{page.url}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{blurb}}">
+
+    <!-- css -->
+    <link href="/assets/css/site.css" rel="stylesheet">
  </head>
   <body>
     <div class="wrapper">
@@ -36,11 +56,10 @@
       </main>
       <footer class="site-footer">
         <p class="copyrights">&copy; 2020 Pratik Mehta</p>
-        <nav class="sm-nav">
+        <nav class="site-footer__nav">
           <a href="//github.com/mehtapratik" title="http://github.com/mehtapratik" target="_blank">GitHub</a>
           <a href="//twitter.com/pratikgmehta" title="http://twitter.com/pratikgmehta" target="_blank">Twitter</a>
-          <a href="//www.linkedin.com/in/pratikgmehta" title="http://www.linkedin.com/in/pratikgmehta"
-            target="_blank">LinkedIn</a>
+          <a href="//www.linkedin.com/in/pratikgmehta" title="http://www.linkedin.com/in/pratikgmehta" target="_blank">LinkedIn</a>
           <a href="mailto://pratikgmehta@gmail.com" title="PratikGMehta@gmail.com">Email</a>
         </nav>
       </footer>

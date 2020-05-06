@@ -1,4 +1,5 @@
 ---
+blurb: About Pratik Mehta
 tags:
   - notPost
   - navItem
