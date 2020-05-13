@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>Codenames Boardgame Immitation</title>
+   <meta name="description" content="{{blurb}}" />
+   <style>
+      @import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+      html {
+         box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+         box-sizing: inherit;
+      }
+
+      body {
+         padding: 1.5rem;
+      }
+
+      .game-board {
+         display: flex;
+         flex-flow: row wrap;
+         place-content: flex-start space-between;
+         max-width: 850px;
+         margin: 0 auto;
+      }
+
+      .game-card {
+         perspective: 1000px;
+         font-family: "Bangers", sans-serif;
+         font-size: 20px;
+         margin-bottom: 25px;
+      }
+
+      .game-card:not(.game-card--revealed):hover .game-card__front {
+         box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.1);
+         transform: scale(1.2);
+         transition: box-shadow 400ms, transform 400ms;
+      }
+
+      .game-card.game-card--revealed .game-card__flipper {
+         transform: rotateY(180deg);
+      }
+
+      .game-card__flipper {
+         transition: 450ms;
+         transform-style: preserve-3d;
+         position: relative;
+         height: 100px;
+         width: 150px;
+      }
+
+      .game-card__front,
+      .game-card__back {
+         -webkit-backface-visibility: hidden;
+         -moz-backface-visibility: hidden;
+         -o-backface-visibility: hidden;
+         backface-visibility: hidden;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border-radius: 0.5em;
+      }
+
+      .game-card__back {
+         transform: rotateY(180deg);
+         background: #7d5a5a url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255, 255, 255, 0.5)' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E") repeat center;
+      }
+
+      .game-card[data-card-color="red"] .game-card__back {
+         background-color: #d63447;
+      }
+
+      .game-card[data-card-color="blue"] .game-card__back {
+         background-color: #1f4068;
+      }
+
+      .game-card[data-card-color="death"] .game-card__back {
+         background-color: #333;
+      }
+
+      .game-card__front {
+         background: #f8f3eb;
+         border: 0;
+         font-size: inherit;
+         font-family: inherit;
+         letter-spacing: 2px;
+         cursor: pointer;
+         transform: rotateY(0deg);
+         padding: 10px;
+      }
+
+      .game-card__inner {
+         background: url("data:image/svg+xml,%3Csvg fill='#7d5a5a' viewBox='0 0 87 85' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2'%3E%3Cg fill-rule='nonzero'%3E%3Cpath d='M20.9 43.545l-.5-3.2-4.7-1-10.8 20.5 12.9-5.3 2.6 4.8-6 5.9 23.4 9.9 2.1-8.2c-13.8-4.6-19-23.4-19-23.4zM40.4 45.145h2.7l4 6.7s6-.7 7.7-1.7c1.3-.8 3.8-4.6 3.8-4.6l.1-2.9H24.8l.1 2.9s2.5 3.8 3.8 4.6c1.7 1 7.7 1.7 7.7 1.7l4-6.7zM67 53.645l15.1 6.2-13.3-20.1-5.9.8s-.7 9.4-4.9 13.2c0 0-16.6 9.7-16.6 31.3 0 0 14.6-21.8 30.2-21.4l-8-5.3 3.4-4.7zm-.7-4.9l4 1.5-2.6-8.8 9.5 14.7-10.3-4.8-3.4 4 2.8-6.6zm.9 14.1c-13.2.8-24.3 17.8-24.3 17.8 4.7-14 18.6-19.3 18.6-19.3l-2.1-4.1 7.8 5.6zM61.7 24.345s-8.3 3.1-17.9 2.8h-.6c-9.6.2-17.9-2.8-17.9-2.8-2.6 0-25.3 8.2-25.3 8.2 3.6 5.4 39.9 6.2 43.5 6.1 3.5.1 39.9-.7 43.5-6.1 0 0-22.7-8.2-25.3-8.2zm-18.8 12.2s25.3-2.7 27-5.1l-7.1-5 17.2 6.2s-19.9 4-37.1 3.9zM54.7.845c-2.8-2.1-9.7.3-11.2.9-1.5-.6-8.4-2.9-11.2-.9-3.2 2.3-5.4 16.4-5.4 16.4 4.8.7 13.9 1.2 16.3 1.3h.6c2.4-.1 11.5-.6 16.3-1.3 0 0-2.2-14-5.4-16.4zm-11.2 15.7l9.5-3.9s1.1-9.7-8.3-9.4c0 0 6.5-2.2 8.3-.4 1.8 1.8 4.4 11.7 4.4 11.7l-13.9 2z'/%3E%3C/g%3E%3C/svg%3E") no-repeat center 4px / auto 40px;
+         border: 1px solid #7d5a5a;
+         border-radius: 0.4em;
+         height: 100%;
+         display: flex;
+         align-items: flex-end;
+      }
+
+      .game-card__word {
+         color: #7d5a5a;
+         text-align: center;
+         padding: 0.25em 0;
+         border-top: 1px solid #7d5a5a;
+         width: 100%;
+      }
+
+   </style>
+</head>
+
+<body>
+   <main class="game-board">
+   </main>
+   <script>
+      // prettier-ignore
+      var words = [{ text: "Tablet", type: "red" }, { text: "Whip", type: "blue" }, { text: "Row", type: "" }, { text: "Spell", type: "" }, { text: "Club", type: "red" }, { text: "Laser", type: "blue" }, { text: "Buffalo", type: "red" }, { text: "Well", type: "blue" }, { text: "Robot", type: "" }, { text: "Pistol", type: "red" }, { text: "Deck", type: "blue" }, { text: "Ground", type: "" }, { text: "Alps", type: "red" }, { text: "Crash", type: "red" }, { text: "Agents", type: "" }, { text: "Platypus", type: "red" }, { text: "Port", type: "blue" }, { text: "Dinosaur", type: "red" }, { text: "Queen", type: "red" }, { text: "Racket", type: "blue" }, { text: "Yard", type: "blue" }, { text: "bear", type: "death" }, { text: "Soldier", type: "" }, { text: "Parachute", type: "blue" }, { text: "Rabbit", type: "" }];
+      var html = "";
+
+      words.forEach(function (obj) {
+         var template = `
+            <section class="game-card" data-card-color="${obj.type}">
+               <div class="game-card__flipper">
+                  <button class="game-card__front">
+                     <span class="game-card__inner">
+                        <span class="game-card__word">${obj.text}</span>
+                     </span>
+                  </button>
+                  <div class="game-card__back"></div>
+               </div>
+            </section>
+            `;
+         console.log(template);
+         html += template;
+      });
+      document.querySelector(".game-board").innerHTML = html;
+
+      document.querySelectorAll(".game-card").forEach(function (el) {
+         el.addEventListener("click", function () {
+            if (this.classList.contains("game-card--revealed") == false) {
+               this.classList.add("game-card--revealed");
+            }
+         });
+      });
+   </script>
+</body>
+
+</html>
