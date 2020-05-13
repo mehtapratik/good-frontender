@@ -2,7 +2,7 @@
 @mixin font-size($type-size: md) {
    font-size: nth($type-sizes, index($type-size-names, $type-size));
 
-   @media (min-width: --viewport-md-min) {
+   @media (min-width: $viewport-md-min) {
       font-size: nth($type-sizes--vp-lg, index($type-size-names, $type-size));
    }
 }
