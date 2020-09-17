@@ -110,4 +110,12 @@ h3 small
 
 And finally, the whole thing above is called **CSS rule (or CSS ruleset)** and the portion before opening curly braces, `h1 small, h2 small, h3 small`, is your **grouped selector**.
 
-And that's I have to say about CSS rules and its individual parts. I hope you found this informative. Feel free to let me know what you think via [Twitter](//twitter.com/pratikgmehta).
+
+
+And that's all I have to say about CSS rules and its individual parts. Here&rsquo;s the quick illustration of what we covered so far:
+
+<figure class="constrained">
+   <img src="/assets/images/anatomy-of-css.svg" alt="Illustration of CSS rulset and its individual parts">
+</figure>
+
+I hope you found this informative. Feel free to let me know what you think via [Twitter](//twitter.com/pratikgmehta).
