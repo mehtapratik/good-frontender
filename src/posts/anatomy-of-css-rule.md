@@ -5,16 +5,16 @@ date: 2020-09-16
 tags: 
    - post
    - series
-title: Anatomy of CSS Rule
-blurb: From time to time, I would like to pause and study the fundamentals of web development instead of constantly trying to catch-up with new features and frameworks. It helps me adhere to basic principles of web development - no mater which new feature or framework I use. Today, I want to go over the anatomy of CSS rule with you. Most of this you may already know but wouldn't hurt going through a quick refresher.
+title: Anatomy of a CSS Rule
+blurb: From time to time, I would like to pause and study the fundamentals of web development instead of constantly trying to catch-up with new features and frameworks. It helps me adhere to basic principles of web development &mdash; no mater which new feature or framework I use. Today, I want to go over the anatomy of CSS rule with you. Most of this you may already know but wouldn't hurt going through a quick refresher.
 ---
 <section class="post__intro">
 <p>
-From time to time, I would like to pause and study the fundamentals of web development instead of constantly trying to catch-up with new features and frameworks. It helps me adhere to basic principles of web development - no mater which new feature or framework I use. Today, I want to go over the anatomy of CSS rule with you. Most of this you may already know but wouldn't hurt going through a quick refresher.
+From time to time, I would like to pause and study the fundamentals of web development instead of constantly trying to catch-up with new features and frameworks. It helps me adhere to basic principles of web development &mdash; no mater which new feature or framework I use. Today, I want to go over the anatomy of CSS rule with you. Most of this you may already know but wouldn't hurt going through a quick refresher.
 </p>
 </section>
 
-Every CSS rule has at least one declaration. A **declaration** is a property-value pair separated by colon. More than on one declaration are separated by semicolon.
+Every CSS rule has at least one declaration. A **declaration** is a property-value pair separated by a colon. More than on one declaration are separated by a semicolon.
 
 ```
 color: tomato
@@ -27,7 +27,7 @@ color: tomato;
 background-color: seashell;
 ```
 
-Semicolon in last declaration (after `seashell`) isn't necessary but it's a good idea to terminate every declaration with one so that when you append another declaration, you don't accidentally end up with syntax error.
+The semicolon in last declaration (after `seashell`) isn't necessary but it's a good idea to terminate every declaration with one. Therefore, you don't accidentally end up with syntax error when you append another declaration later.
 
 Properties that accept more than one values separate them with a space or in few cases, with a forward slash. If you're unsure, consult [Mozilla Developer Network](//developer.mozilla.org/en-US/docs/Web/CSS) or [CSS specs](//www.w3.org/Style/CSS/specs.en.html).
 
@@ -36,7 +36,7 @@ padding: 1rem 0.5rem;
 grid-column: 1 / 3;
 ```
 
-Many properties accept an array of values separated by comma. And then there are properties that accept both, multiple values and an array of values, such as `box-shadow` property in example below.
+Many properties accept an array of values separated by a comma. And then there are properties that accept both, multiple values and an array of values, such as `box-shadow` property in example below.
 
 ```
 background-size: contain, cover;
@@ -74,12 +74,13 @@ h1 small
 }
 ```
 
-The whole thing, `h1 small`, is known as **compound selector**. With help of descendent combinator (space between `h1` and `small`) you tell browser to style only those `small` elements that are descendent of `h1`. Browser leaves all other `small` elements alone for the purpose of this styling with this declaration block.
-
+The whole thing, `h1 small`, is known as **compound selector**. With help of descendent combinator (space between `h1` and `small`) you tell the browser to style only those `small` elements that are descendent of `h1`. Browser leaves all other `small` elements alone for the purpose of this styling with this declaration block.
 
 You have more than a handful of selectors selectors and combinators to use them in many different and interesting ways. I won't be covering them all in this article. Instead, I would encourage you to study them at [<abbr title="Mozilla Developer Network">MDN</abbr>](//developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
-An important thing to note about combinators and selectors, however, is that it's possible to target descendants, children and following siblings. But, there are no selectors or combinators to target ancestor, parent or preceding siblings. This can be better explained by example:
+**<em>An important thing to note about combinators and selectors, however, is that it&rsquo;s possible to target descendants, children and following siblings. But, there are no selectors or combinators to target ancestor, parent or preceding siblings.</em>**
+
+This can be better explained by example:
 
 ```
 <ul>
