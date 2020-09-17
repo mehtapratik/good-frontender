@@ -78,7 +78,9 @@ The whole thing, `h1 small`, is known as **compound selector**. With help of des
 
 You have more than a handful of selectors selectors and combinators to use them in many different and interesting ways. I won't be covering them all in this article. Instead, I would encourage you to study them at [<abbr title="Mozilla Developer Network">MDN</abbr>](//developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
-An important thing to note about combinators and selectors, however, is that it&rsquo;s possible to target descendants, children and following siblings. But, there are no selectors or combinators to target ancestor, parent or preceding siblings. This can be better explained by example:
+**<em>An important thing to note about combinators and selectors, however, is that it&rsquo;s possible to target descendants, children and following siblings. But, there are no selectors or combinators to target ancestor, parent or preceding siblings.</em>**
+
+This can be better explained by example:
 
 ```
 <ul>

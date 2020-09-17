@@ -128,3 +128,9 @@ pre {
   border-radius: $radius-sm;
   overflow-x: auto;
 }
+
+pre code {
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+}
