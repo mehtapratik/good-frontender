@@ -12,3 +12,5 @@ blurb: Monthly Business Snapshot
 <video autoPlay muted>
    <source src="/assets/videos/all-together-now.mp4"/>
 </video>
+
+<img src="/assets/images/all-together-now.png" alt="All together now">
